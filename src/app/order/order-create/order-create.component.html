@@ -1,0 +1,32 @@
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a routerLink="/orders/list">Back to list</a>
+    <table *ngIf="order" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="order.id" type="text" size="5" disabled></td>
+        </tr>
+        <tr>
+            <th>Customer</th>
+            <td>
+                <select [(ngModel)]="order.customerId">
+                    <option *ngFor="let c of customers" value={{c.id}}>{{c.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><input [(ngModel)]="order.description" type="text" size="25"></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td><input [(ngModel)]="order.total" type="number" size="25" disabled></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>

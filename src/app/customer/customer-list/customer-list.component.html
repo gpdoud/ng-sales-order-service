@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div id="component">
     <h3>Customer list</h3>
     <a routerLink="/customers/create">New Customer</a>
@@ -15,7 +16,7 @@
             <td>{{c.name}}</td>
             <td>{{c.state}}</td>
             <td>{{c.sales | currency}}</td>
-            <td>{{c.active ? "Y" : "N"}}</td>
+            <td>{{c.active | bool:'fr'}}</td>
             <td>
                 <a routerLink="/customers/detail/{{c.id}}">Detail</a> | 
                 <a routerLink="/customers/edit/{{c.id}}">Edit</a>

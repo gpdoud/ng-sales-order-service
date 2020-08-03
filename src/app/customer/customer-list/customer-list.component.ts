@@ -10,6 +10,7 @@ import { Customer } from '../customer.class';
 export class CustomerListComponent implements OnInit {
 
   customers: Customer[];
+  excludeState: string = "CA";
 
   constructor(
     private custsvc: CustomerService

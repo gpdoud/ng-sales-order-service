@@ -11,6 +11,7 @@ import { Customer } from '../customer.class';
 export class CustomerEditComponent implements OnInit {
 
   customer: Customer = null;
+  pageTitle: string = "Customer Edit";
 
   constructor(
     private route: ActivatedRoute,

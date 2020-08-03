@@ -1,0 +1,24 @@
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a routerLink="/orders/create">New Order</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>Description</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let o of orders">
+            <td>{{o.id}}</td>
+            <td>{{o.customer.name}}</td>
+            <td>{{o.description}}</td>
+            <td>{{o.total | currency}}</td>
+            <td>
+                <a routerLink="/orders/detail/{{o.id}}">Detail</a> | 
+                <a routerLink="/orders/edit/{{o.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
