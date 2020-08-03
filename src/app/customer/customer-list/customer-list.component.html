@@ -1,0 +1,25 @@
+<div id="component">
+    <h3>Customer list</h3>
+    <a routerLink="/customers/create">New Customer</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Sales</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let c of customers">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.state}}</td>
+            <td>{{c.sales | currency}}</td>
+            <td>{{c.active ? "Y" : "N"}}</td>
+            <td>
+                <a routerLink="/customers/detail/{{c.id}}">Detail</a> | 
+                <a routerLink="/customers/edit/{{c.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
