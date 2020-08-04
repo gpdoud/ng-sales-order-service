@@ -1,8 +1,7 @@
 import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { OrderService } from '../order.service';
 import { Order } from '../order.class';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Orderitem } from 'src/app/orderitem/orderitem.class';
+import { ActivatedRoute } from '@angular/router';
 import { OrderitemService } from 'src/app/orderitem/orderitem.service';
 
 @Component({
@@ -12,14 +11,16 @@ import { OrderitemService } from 'src/app/orderitem/orderitem.service';
 })
 export class OrderLinesComponent implements OnInit {
 
-  orderId: number = 0;
-  order: Order = null;
+  orderId: number = 0; 
   pageTitle: string = "Order Lines";
+  order: Order = null;
+ 
   
   showVerify: boolean = false;
 
   delete(): void { this.showVerify = !this.showVerify; }
   verify(id: number): void {
+    this.showVerify = false;
     this.orditemsvc.remove(id).subscribe(
       res => {
         console.log("Orderitem deleted successfully!");
@@ -30,7 +31,6 @@ export class OrderLinesComponent implements OnInit {
   
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private ordsvc: OrderService,
     private orditemsvc: OrderitemService
   ) { }
