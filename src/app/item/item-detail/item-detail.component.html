@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a routerLink="/items/list">Back to list</a>
+    <table *ngIf="item" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="item.id" type="text" size="5" disabled></td>
+        </tr>
+        <tr>
+            <th>UPC</th>
+            <td><input [(ngModel)]="item.upc" type="text" size="15" disabled></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><input [(ngModel)]="item.name" type="text" size="25" disabled></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td><input [(ngModel)]="item.price" type="number" size="25" disabled></td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="verify()" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+                <button *ngIf="showDelete" (click)="delete()" class="btn btn-danger">Verify</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a routerLink="/items/create">New Item</a>
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>UPS</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let i of items">
+            <td>{{i.id}}</td>
+            <td>{{i.upc}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.price | currency}}</td>
+            <td>
+                <a routerLink="/items/detail/{{i.id}}">Detail</a> | 
+                <a routerLink="/items/edit/{{i.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a *ngIf="orderitem" routerLink="/orders/lines/{{orderitem.orderId}}">Back to list</a>
+    <table *ngIf="orderitem" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="orderitem.id" type="text" size="5" disabled></td>
+        </tr>
+        <tr>
+            <th>Item</th>
+            <td>
+                <select [(ngModel)]="orderitem.itemId">
+                    <option *ngFor="let i of items" value={{i.id}}>{{i.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td><input [(ngModel)]="orderitem.quantity" type="number" size="15"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="save()" class="btn btn-primary">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>

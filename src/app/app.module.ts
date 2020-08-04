@@ -15,6 +15,15 @@ import { OrderCreateComponent } from './order/order-create/order-create.componen
 import { OrderEditComponent } from './order/order-edit/order-edit.component';
 import { BoolDisplayPipe } from './pipes/bool-display.pipe';
 import { MenuComponent } from './menu/menu.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { OrderitemListComponent } from './orderitem/orderitem-list/orderitem-list.component';
+import { OrderitemDetailComponent } from './orderitem/orderitem-detail/orderitem-detail.component';
+import { OrderitemCreateComponent } from './orderitem/orderitem-create/orderitem-create.component';
+import { OrderitemEditComponent } from './orderitem/orderitem-edit/orderitem-edit.component';
+import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +37,16 @@ import { MenuComponent } from './menu/menu.component';
     OrderCreateComponent,
     OrderEditComponent,
     BoolDisplayPipe,
-    MenuComponent
+    MenuComponent,
+    ItemListComponent,
+    ItemDetailComponent,
+    ItemCreateComponent,
+    ItemEditComponent,
+    OrderitemListComponent,
+    OrderitemDetailComponent,
+    OrderitemCreateComponent,
+    OrderitemEditComponent,
+    OrderLinesComponent
   ],
   imports: [
     BrowserModule,

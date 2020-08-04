@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div id="component">
     <span class="h4">{{pageTitle}}</span>
     <span> | </span>
@@ -16,6 +17,7 @@
             <td>{{o.description}}</td>
             <td>{{o.total | currency}}</td>
             <td>
+                <a routerLink="/orders/lines/{{o.id}}">Lines</a> | 
                 <a routerLink="/orders/detail/{{o.id}}">Detail</a> | 
                 <a routerLink="/orders/edit/{{o.id}}">Edit</a>
             </td>

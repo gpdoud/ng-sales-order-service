@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div id="component">
+    <span class="h4">{{pageTitle}}</span>
+    <span> | </span>
+    <a *ngIf="orderId" routerLink="/orderitems/create/{{orderId}}">New</a>
+    <span> | </span>
+    <a routerLink="/orders/list">Back to list</a>
+    <table *ngIf="order" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>Description</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>{{order.id}}</td>
+            <td>{{order.customer.name}}</td>
+            <td>{{order.description}}</td>
+            <td>{{order.total | currency}}</td>
+        </tr>
+    </table>
+    <p></p>
+    <table *ngIf="order && order.orderitems" class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let oi of order.orderitems">
+            <td>{{oi.id}}</td>
+            <td>{{oi.item.name}}</td>
+            <td>{{oi.quantity}}</td>
+            <td>{{oi.item.price | currency}}</td>
+            <td>{{oi.item.price * oi.quantity | currency}}</td>
+            <td>
+                <a routerLink="/orderitems/edit/{{oi.id}}">Edit</a> | 
+                <a (click)="delete()" class="blue">Delete</a>
+                <span *ngIf="showVerify"> | 
+                    <a (click)="verify(oi.id)" class="blue">Verify</a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
