@@ -5,13 +5,13 @@
     <a routerLink="/orders/create">New Order</a>
     <table class="table table-sm">
         <tr>
-            <th>Id</th>
-            <th>Customer</th>
-            <th>Description</th>
-            <th>Total</th>
+            <th><a (click)="sort('id')" class="clickable">Id</a></th>
+            <th><a (click)="sort('customerName')" class="clickable">Customer</a></th>
+            <th><a (click)="sort('description')" class="clickable">Description</a></th>
+            <th><a (click)="sort('total')" class="clickable">Total</a></th>
             <th>Actions</th>
         </tr>
-        <tr *ngFor="let o of orders">
+        <tr *ngFor="let o of orders | sort:sortCriteria:sortAsc">
             <td>{{o.id}}</td>
             <td>{{o.customer.name}}</td>
             <td>{{o.description}}</td>

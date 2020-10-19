@@ -2,16 +2,18 @@
 <div id="component">
     <h3>Customer list</h3>
     <a routerLink="/customers/create">New Customer</a>
+    <span> | </span>
+    <input id="search" [(ngModel)]="searchCriteria" type="text" placeholder="Search">
     <table class="table table-sm">
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>State</th>
-            <th>Sales</th>
-            <th>Active</th>
+            <th><a (click)="sort('id')" class="clickable">Id</a></th>
+            <th><a (click)="sort('name')" class="clickable">Name</a></th>
+            <th><a (click)="sort('state')" class="clickable">State</a></th>
+            <th><a (click)="sort('sales')" class="clickable">Sales</a></th>
+            <th><a (click)="sort('active')" class="clickable">Active</a></th>
             <th>Actions</th>
         </tr>
-        <tr *ngFor="let c of customers">
+        <tr *ngFor="let c of customers | customerSearch:searchCriteria | sort:sortCriteria:sortAsc">
             <td>{{c.id}}</td>
             <td>{{c.name}}</td>
             <td>{{c.state}}</td>

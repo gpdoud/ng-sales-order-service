@@ -17,9 +17,14 @@ export class OrderLinesComponent implements OnInit {
  
   
   showVerify: boolean = false;
+  idToDelete: number = 0;
 
-  delete(): void { this.showVerify = !this.showVerify; }
+  delete(id: number): void { 
+    this.idToDelete = id;
+    this.showVerify = !this.showVerify; 
+  }
   verify(id: number): void {
+    this.idToDelete = 0;
     this.showVerify = false;
     this.orditemsvc.remove(id).subscribe(
       res => {

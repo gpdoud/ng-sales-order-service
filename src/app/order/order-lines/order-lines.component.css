@@ -1,4 +1,12 @@
-.blue {
+.primary {
     color: #007bff !important;
     cursor: pointer;
+}
+.danger {
+    color: red !important;
+    cursor: pointer;
+    font-weight: bold;
+}
+.width-200 {
+    width: 200px;
 }

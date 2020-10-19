@@ -24,6 +24,8 @@ import { OrderitemDetailComponent } from './orderitem/orderitem-detail/orderitem
 import { OrderitemCreateComponent } from './orderitem/orderitem-create/orderitem-create.component';
 import { OrderitemEditComponent } from './orderitem/orderitem-edit/orderitem-edit.component';
 import { OrderLinesComponent } from './order/order-lines/order-lines.component';
+import { SortPipe } from './sort/sort.pipe';
+import { CustomerSearchPipe } from './customer/customer-search.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { OrderLinesComponent } from './order/order-lines/order-lines.component';
     OrderitemDetailComponent,
     OrderitemCreateComponent,
     OrderitemEditComponent,
-    OrderLinesComponent
+    OrderLinesComponent,
+    SortPipe,
+    CustomerSearchPipe
   ],
   imports: [
     BrowserModule,

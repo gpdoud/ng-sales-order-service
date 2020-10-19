@@ -35,11 +35,11 @@
             <td>{{oi.quantity}}</td>
             <td>{{oi.item.price | currency}}</td>
             <td>{{oi.item.price * oi.quantity | currency}}</td>
-            <td>
+            <td class="width-200">
                 <a routerLink="/orderitems/edit/{{oi.id}}">Edit</a> | 
-                <a (click)="delete()" class="blue">Delete</a>
-                <span *ngIf="showVerify"> | 
-                    <a (click)="verify(oi.id)" class="blue">Verify</a>
+                <a (click)="delete(oi.id)" class="primary">Delete</a>
+                <span *ngIf="showVerify && idToDelete == oi.id"> | 
+                    <a (click)="verify(oi.id)" class="danger">Verify</a>
                 </span>
             </td>
         </tr>

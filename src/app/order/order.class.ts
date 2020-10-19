@@ -10,5 +10,7 @@ export class Order {
     customer: Customer;
     orderitems: Orderitem[];
 
+    customerName: string = '';
+
     constructor() {}
 }
